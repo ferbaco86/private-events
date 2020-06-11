@@ -13,11 +13,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def login
-    @user = User.find_by(params[:name])
-    session[:current_user_id] = @user.id
-    if session[:current_user_id] != nil
-      render :show
-    end
-  end
 end
