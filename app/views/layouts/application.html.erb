@@ -10,7 +10,30 @@
   </head>
 
   <body>
-    <%= session[:user_id] %>
+     <nav class = "navbar is-black">
+      <div class = "navbar-brand">
+        <div class = "navbar-item">
+          <%= link_to root_path do %>
+            <h1 class = "title is-5 title_color">PRIVATE EVENTS</h1>
+          <% end %>
+        </div>
+      </div>
+      <div class= "navbar-item username title_color">
+          <%= session[:username] %>
+        </div>
+        <div class= "navbar-end">
+          <div class = "navbar-item">
+            <%= link_to 'New User', new_user_path, class: 'button is-primary'%>
+          </div>
+          <div class= "navbar-item">
+            <%= link_to 'Logout', sessions_destroy_path, class: 'button is-danger'%>
+          </div>
+        </div>
+          <div class = "navbar-item">
+            <%= link_to 'Log in', sessions_log_in_path, class: 'button is-primary'%>
+          </div>
+      </nav>
+    
     <%= yield %>
   </body>
 </html>

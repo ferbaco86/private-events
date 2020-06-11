@@ -10,14 +10,19 @@ class SessionsController < ApplicationController
       
       if @user_temp
         session[:user_id] = @user_temp.id
-        render json: {
-          status: :created,
-          logged_in: true,
-          user: @user_temp
-        }
+        session[:username] = @user_temp.name
+        # render json: {
+        #   status: :created,
+        #   logged_in: true,
+        #   user: @user_temp,
+          
+        # }
+        redirect_to root_path
+        
       else
         render json: { status: 401 }
       end
+      
   end
   
   def log_in
@@ -26,5 +31,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    redirect_to root_path
   end
 end

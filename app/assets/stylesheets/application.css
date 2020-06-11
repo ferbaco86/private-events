@@ -14,3 +14,12 @@
  *= require_self
  */
  @import "bulma";
+
+ .title_color {
+   color: white !important;
+ }
+
+ .username {
+   flex-grow: 1;
+   justify-content: center;
+ }
