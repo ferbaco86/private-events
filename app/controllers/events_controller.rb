@@ -18,6 +18,8 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user = User.find(@event.creator_id)
+    @attendance_id = @event.attendances.first.event_attendee.id
+    @attendee = User.find(@attendance_id).name
   end
 
   def index
