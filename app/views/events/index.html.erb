@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-content">
+    <h3 class="title is-5">Events</h3>
+  </div>
+</div>
+<div class = "card">
+  <div class = "card-content">
+    <ul>
+      <% @events.each do |events| %>
+        <li>
+          <strong>Event_id: </strong><%= events.id %>
+          <strong>Creator_id: </strong><%= events.creator_id %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
