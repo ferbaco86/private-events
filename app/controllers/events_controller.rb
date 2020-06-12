@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
+  include EventsHelper
+
   def new
     @event = Event.new
   end
 
   def create
-    @event = session[:user_id].events.build
+    @event = User.find_by(id: session[:user_id]).events.build(event_params)
 
     if @event.save
       redirect_to root_path
@@ -15,9 +17,15 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user = User.find(@event.creator_id)
   end
 
   def index
     @events = Event.all
+    @users_id = Event.distinct.pluck(:creator_id)
+    @users = []
+    @users_id.each do |user_id|
+      @users.push(user_id,User.select(:id,:name).where(id: user_id))
+    end
   end
 end
