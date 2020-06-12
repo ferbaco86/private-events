@@ -6,14 +6,13 @@
 <div class = "card">
   <div class = "card-content">
     <ul>
-    <%=@users%>
-    <%=@users_id%>
-      <% @events.each do |events| %>
+      <% @records.each do |record| %>
         <li>
-          <strong>Event_id: </strong><%= events[0] %>
-          <strong>Creator Name: </strong><%= events[1] %>
+          <strong>Event_id: </strong><%= record[0] %>
+          <strong>Creator Name: </strong><%= record[1].first.name.capitalize %>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+

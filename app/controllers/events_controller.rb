@@ -24,8 +24,11 @@ class EventsController < ApplicationController
     @events = Event.all
     @users_id = Event.distinct.pluck(:creator_id)
     @users = []
-    @users_id.each do |user_id|
-      @users.push(user_id,User.select(:id,:name).where(id: user_id))
+    @records = []
+    @events.each do |event|
+      @users.push(event.id,User.select(:id,:name).where(id: event.creator_id))
+      @records.push(@users)
+      @users = []
     end
   end
 end
