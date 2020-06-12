@@ -18,8 +18,12 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user = User.find(@event.creator_id)
-    @attendance_id = @event.attendances.first.event_attendee.id
-    @attendee = User.find(@attendance_id).name
+    @attendance_ids = @event.attendances.all
+    @attendees = []
+    @attendance_ids.each do |attendance_id|
+      #@attendees.push(attendance_id)
+      @attendees.push(User.find(attendance_id.event_attendee_id))
+    end
   end
 
   def index
