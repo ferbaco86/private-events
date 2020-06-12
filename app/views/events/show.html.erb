@@ -11,8 +11,8 @@
 <div class = "card">
   <div class = "card-content">
     <strong>Asisstants Names: </strong>
-    <%= @attendees.each do |attendee| %>
-      <br>Name: <%= attendee.name %>
+    <%for i in 0..@attendees.length - 1%>
+      <br><%= @attendees[i].name%>
     <% end %>
   </div>
 </div>
