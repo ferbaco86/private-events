@@ -14,6 +14,8 @@ class UsersController < ApplicationController
     @event = @user.events
     @attendances = @user.attendances
     @attended_events = []
+    @upcoming_events = @user.upcoming_events
+    @previous_events = @user.previous_events
     @attendances.each do |attendance|
       @attended_events.push(Event.find(attendance.attended_event_id))
     end

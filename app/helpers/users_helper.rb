@@ -14,10 +14,4 @@ module UsersHelper
       end
     end
   end
-
-  def attended_event
-    @attendances.collect do |attendance|
-      attendance.find_by(event_attendee: session[:user_id])
-    end
-  end
 end

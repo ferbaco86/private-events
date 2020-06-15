@@ -8,9 +8,11 @@
     <ul>
       <% @records.each do |record| %>
         <li>
-          <strong>Event_id: </strong><%= record[0] %>
-          <strong>Creator Name: </strong><%= record[1].first.name.capitalize %>
-        </li>
+          <strong>Event Date: </strong><%= record[0] %><br>
+          <strong>Event Location: </strong><%= record[1] %><br>
+          <strong>Event Description: </strong><%= record[2] %><br>
+          <strong>Creator Name: </strong><%= record[3].first.name.capitalize %>
+        </li><br>
       <% end %>
     </ul>
   </div>

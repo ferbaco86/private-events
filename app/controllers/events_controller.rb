@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @users = []
     @records = []
     @events.each do |event|
-      @users.push(event.id,User.select(:id,:name).where(id: event.creator_id))
+      @users.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
       @records.push(@users)
       @users = []
     end
