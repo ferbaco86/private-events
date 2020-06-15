@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @event = @user.events
     @attendances = @user.attendances
+    @attended_events = []
+    @attendances.each do |attendance|
+      @attended_events.push(Event.find(attendance.attended_event_id))
+    end
   end
 
 end

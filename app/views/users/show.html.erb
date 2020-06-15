@@ -8,17 +8,19 @@
 </div>
 <div class = "card">
   <div class = "card-content">
+  <strong>Created Events: </strong>
     <%= show_event_info(@event) %>
   </div>
 </div>
 <div class = "card">
   <div class = "card-content">
     <ul>
-      <% @event.each  do |e|%>
-        <li><strong>Event Date: </strong><%= e.event_date %> </li>
-        <li><strong>Location: </strong><%= e.location %> </li>
-        <br>
-      <% end %>
+    <strong>Events: </strong>
+    <%@attended_events.each do |event|%>
+      <br><%= event.event_date%>
+      <br><%= event.location%>
+    <% end %>
+     
     </ul>
   </div>
 </div>
