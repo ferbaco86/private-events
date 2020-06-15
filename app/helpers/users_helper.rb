@@ -6,10 +6,14 @@ module UsersHelper
   def show_event_info(event)
     event_date_text = 'Event Date: '
     event_location_text = 'Location: '
+    event_description_text = 'Event Description: '
+
     content_tag :ul do
       event.collect do |e|
         concat(content_tag(:li, content_tag(:strong, event_date_text) + e.event_date))
         concat(content_tag(:li, content_tag(:strong, event_location_text) + e.location))
+        concat(content_tag(:li, content_tag(:strong, event_description_text) + e.description))
+
         concat(tag(:br))
       end
     end
