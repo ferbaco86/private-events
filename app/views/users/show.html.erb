@@ -6,18 +6,19 @@
     </h3>
   </div>
 </div>
-  <div class = "card">
-    <div class = "card-content">
-      <ul>
+<div class = "card">
+  <div class = "card-content">
+    <%= show_event_info(@event) %>
+  </div>
+</div>
+<div class = "card">
+  <div class = "card-content">
+    <ul>
       <% @event.each  do |e|%>
         <li><strong>Event Date: </strong><%= e.event_date %> </li>
         <li><strong>Location: </strong><%= e.location %> </li>
         <br>
       <% end %>
-      </ul>
+    </ul>
   </div>
 </div>
-    
-        
-        
-     
