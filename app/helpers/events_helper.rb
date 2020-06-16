@@ -1,6 +1,6 @@
 module EventsHelper
   def event_params
-    params.require(:event).permit(:description)
+    params.require(:event).permit(:event_date,:location,:description)
   end
 
   def show_attendance_info(attendance)
