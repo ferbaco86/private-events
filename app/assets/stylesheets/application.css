@@ -13,23 +13,23 @@
  *= require_tree .
  *= require_self
  */
- /*@import "bulma";*/
- 
 
- .title_color {
-   color: white !important;
- }
+/* @import "bulma"; */
 
- .username {
-   flex-grow: 1;
-   justify-content: center;
- }
+.title_color {
+  color: white !important;
+}
 
- .is-outlined {
-   text-decoration: underline;
- }
+.username {
+  flex-grow: 1;
+  justify-content: center;
+}
 
- .nav-h.navbar {
-   min-height: unset;
-   height: 40px;
- }
+.is-outlined {
+  text-decoration: underline;
+}
+
+.nav-h.navbar {
+  min-height: unset;
+  height: 40px;
+}
