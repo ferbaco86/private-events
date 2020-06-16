@@ -28,18 +28,7 @@ class EventsController < ApplicationController
   def index
     @future_events = Event.future
     @past_events = Event.past
-    @event_info = []
-    @records_future = []
-    @records_past = []
-    @future_events.each do |event|
-      @event_info.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
-      @records_future.push(@event_info)
-      @event_info = []
-    end
-    @past_events.each do |event|
-      @event_info.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
-      @records_past.push(@event_info)
-      @event_info = []
-    end
+    @records_future = find_events(@future_events)
+    @records_past = find_events(@past_events)
   end
 end

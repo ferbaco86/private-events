@@ -1,6 +1,6 @@
 module EventsHelper
   def event_params
-    params.require(:event).permit(:event_date,:location,:description)
+    params.require(:event).permit(:event_date, :location, :description)
   end
 
   def show_attendance_info(attendance)
@@ -27,9 +27,22 @@ module EventsHelper
         concat(content_tag(:li, content_tag(:strong, event_description_text) + r[2]))
         concat(content_tag(:li, content_tag(:strong, event_creator_text) + r[3].first.name.capitalize))
 
-
         concat(tag(:br))
       end
     end
+  end
+
+  def find_events(events)
+    @event_info = []
+    @records = []
+    events.each do |event|
+      @event_info.push(event.event_date,
+                       event.location,
+                       event.description,
+                       User.select(:id, :name).where(id: event.creator_id))
+      @records.push(@event_info)
+      @event_info = []
+    end
+    @records
   end
 end

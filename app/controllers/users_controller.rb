@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@current_user = User.find(session[:user_id])
+    # @current_user = User.find(session[:user_id])
     @event = @user.events
     @attendances = @user.attendances
     @attended_events = []
@@ -21,5 +21,4 @@ class UsersController < ApplicationController
       @attended_events.push(Event.find(attendance.attended_event_id))
     end
   end
-
 end

@@ -7,7 +7,7 @@ RSpec.describe 'Webpage workflow', type: :system do
       fill_in 'name', with: 'Luke'
       click_button 'Create User'
       sleep(5)
-      visit "/sessions/log_in"
+      visit '/sessions/log_in'
       fill_in 'username_login', with: 'Luke'
       click_button 'Login'
       sleep(5)
@@ -32,4 +32,4 @@ end
 #     click_button 'Create User'
 #     expect(page).to have_content 'Success'
 #   end
-#end
+# end
