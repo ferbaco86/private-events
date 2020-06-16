@@ -26,9 +26,8 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.new
-    @future_events = @events.future
-    @past_events = @events.past
+    @future_events = Event.future
+    @past_events = Event.past
     @event_info = []
     @records_future = []
     @records_past = []

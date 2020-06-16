@@ -3,13 +3,8 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :event_attendee
   belongs_to :creator, class_name: "User"
 
-  def future
-    time = Time.now
-    Event.select(:id,:event_date,:location,:description,:creator_id).where("event_date > ?", time.to_formatted_s(:db))
-  end
+  scope :future, -> { select(:id,:event_date,:location,:description,:creator_id).where("event_date > ?", Time.now.to_formatted_s(:db)) }
 
-  def past
-    time = Time.now
-    Event.select(:id,:event_date,:location,:description,:creator_id).where("event_date <= ?", time.to_formatted_s(:db))
-  end
+  scope :past, -> { select(:id,:event_date,:location,:description,:creator_id).where("event_date <= ?", Time.now.to_formatted_s(:db)) }
+
 end
