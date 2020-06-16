@@ -22,13 +22,14 @@
           <strong class ="has-text-white title is-5"><%= session[:username] %></strong>
         </div>
         <div class= "navbar-end">
+          <% if !signedin? %>
           <div class = "navbar-item">
             <%= link_to 'New User', new_user_path, class: 'button is-primary'%>
           </div>
           <div class = "navbar-item">
             <%= link_to 'Log in', sessions_log_in_path, class: 'button is-primary'%>
           </div>
-          <% if signedin? %>
+          <% else %>
             <div class = "navbar-item">
               <%= link_to 'Create Event', new_event_path, class: 'button is-primary'%>
             </div>
@@ -38,7 +39,16 @@
           <%end%>
         </div>   
       </nav>
-    
+
+    <nav class = "navbar nav-h is-info">
+        <div class= "navbar-end">
+          <% if signedin? %>
+          <div class = "navbar-item">
+            <%= link_to 'Events', user_path(session[:user_id]), class: 'button is-small is-primary'%>
+          </div>
+          <%end%>
+        </div>   
+      </nav>
     <%= yield %>
   </body>
 </html>

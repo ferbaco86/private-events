@@ -27,3 +27,8 @@
  .is-outlined {
    text-decoration: underline;
  }
+
+ .nav-h.navbar {
+   min-height: unset;
+   height: 40px;
+ }
