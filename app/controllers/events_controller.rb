@@ -26,14 +26,21 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
-    @users_id = Event.distinct.pluck(:creator_id)
-    @users = []
-    @records = []
-    @events.each do |event|
-      @users.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
-      @records.push(@users)
-      @users = []
+    @events = Event.new
+    @future_events = @events.future
+    @past_events = @events.past
+    @event_info = []
+    @records_future = []
+    @records_past = []
+    @future_events.each do |event|
+      @event_info.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
+      @records_future.push(@event_info)
+      @event_info = []
+    end
+    @past_events.each do |event|
+      @event_info.push(event.event_date,event.location,event.description,User.select(:id,:name).where(id: event.creator_id))
+      @records_past.push(@event_info)
+      @event_info = []
     end
   end
 end
