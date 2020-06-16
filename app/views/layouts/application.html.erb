@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PrivateEvents</title>
+    <title>Private Events</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,24 +14,29 @@
       <div class = "navbar-brand">
         <div class = "navbar-item">
           <%= link_to root_path do %>
-            <h1 class = "title is-5 title_color">PRIVATE EVENTS</h1>
+            <h1 class = "title is-4 title_color">Private Events</h1>
           <% end %>
         </div>
       </div>
       <div class= "navbar-item username title_color">
-          <%= session[:username] %>
+          <strong class ="has-text-white title is-5"><%= session[:username] %></strong>
         </div>
         <div class= "navbar-end">
           <div class = "navbar-item">
             <%= link_to 'New User', new_user_path, class: 'button is-primary'%>
           </div>
-          <div class= "navbar-item">
-            <%= link_to 'Logout', sessions_destroy_path, class: 'button is-danger'%>
-          </div>
-        </div>
           <div class = "navbar-item">
             <%= link_to 'Log in', sessions_log_in_path, class: 'button is-primary'%>
           </div>
+          <% if signedin? %>
+            <div class = "navbar-item">
+              <%= link_to 'Create Event', new_event_path, class: 'button is-primary'%>
+            </div>
+            <div class= "navbar-item">
+              <%= link_to 'Logout', sessions_destroy_path, class: 'button is-danger'%>
+            </div>
+          <%end%>
+        </div>   
       </nav>
     
     <%= yield %>

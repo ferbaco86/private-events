@@ -1,20 +1,10 @@
 <div class="card">
   <div class="card-content">
-    <h3 class="title is-5">Events</h3>
+    <h3 class="title is-5 is-outlined">Events</h3>
   </div>
 </div>
 <div class = "card">
   <div class = "card-content">
-    <ul>
-      <% @records.each do |record| %>
-        <li>
-          <strong>Event Date: </strong><%= record[0] %><br>
-          <strong>Event Location: </strong><%= record[1] %><br>
-          <strong>Event Description: </strong><%= record[2] %><br>
-          <strong>Creator Name: </strong><%= record[3].first.name.capitalize %>
-        </li><br>
-      <% end %>
-    </ul>
+    <%= show_all_info(@records)%>
   </div>
 </div>
-
