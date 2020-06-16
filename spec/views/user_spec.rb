@@ -7,20 +7,10 @@ RSpec.describe 'Webpage workflow', type: :system do
       fill_in 'name', with: 'Luke'
       click_button 'Create User'
       sleep(5)
-    end
-  end
-  User.create(:name=>'Luke')
-  describe 'Login user' do
-    it 'Logs in the user to the webpage' do
       visit "/sessions/log_in"
       fill_in 'username_login', with: 'Luke'
       click_button 'Login'
       sleep(5)
-    end
-  end
-  describe 'Create Event' do
-    User.create(:name => 'Luke')
-    it 'creates a new event' do
       visit new_event_path
       fill_in 'description', with: 'Testing views'
       click_button 'Create Event'
