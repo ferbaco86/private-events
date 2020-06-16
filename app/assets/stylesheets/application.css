@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import "bulma";
+ /*@import "bulma";*/
+ 
 
  .title_color {
    color: white !important;
