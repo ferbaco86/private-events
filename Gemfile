@@ -31,6 +31,7 @@ gem 'bulma-rails', '~> 0.8.2'
 gem 'rubocop', '~>0.81.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -60,6 +61,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
