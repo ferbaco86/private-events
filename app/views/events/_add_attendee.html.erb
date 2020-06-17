@@ -1,0 +1,4 @@
+<%= form_with model: @invitation do |invitation_form| %>
+  <%= invitation_form.collection_select(:event_attendee_id, User.all, :id, :name) %>
+
+<% end %>

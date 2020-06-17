@@ -3,6 +3,10 @@ module EventsHelper
     params.require(:event).permit(:event_date, :location, :description)
   end
 
+  def attendance_params
+    params.require(:attendance).permit(:attended_event_id, :event_attendee_id)
+  end
+
   def show_attendance_info(attendance)
     event_guest_text = 'Name: '
 
