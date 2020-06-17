@@ -26,6 +26,8 @@ module EventsHelper
         concat(content_tag(:li, content_tag(:strong, event_location_text) + r[1]))
         concat(content_tag(:li, content_tag(:strong, event_description_text) + r[2]))
         concat(content_tag(:li, content_tag(:strong, event_creator_text) + r[3].first.name.capitalize))
+        concat(content_tag(:li, link_to("Guest List", event_path(r[4]), class: "guest-link-style title is-5 has-text-white has-background-black")) )
+
 
         concat(tag(:br))
       end
@@ -39,7 +41,8 @@ module EventsHelper
       @event_info.push(event.event_date,
                        event.location,
                        event.description,
-                       User.select(:id, :name).where(id: event.creator_id))
+                       User.select(:id, :name).where(id: event.creator_id),
+                       event.id)
       @records.push(@event_info)
       @event_info = []
     end

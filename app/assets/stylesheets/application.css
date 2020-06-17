@@ -33,3 +33,8 @@
   min-height: unset;
   height: 40px;
 }
+
+.guest-link-style {
+  padding: 0 8px;
+  border-radius: 10px;
+}
