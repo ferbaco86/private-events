@@ -55,7 +55,7 @@ Rails app using associations betewen tables.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/LoboArkano/Members-Only/issues).
+Feel free to check the [issues page](https://github.com/ferbaco86/private-events/issues).
 
 ## Show your support
 
