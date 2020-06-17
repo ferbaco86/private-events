@@ -6,4 +6,4 @@ example_id                              | status | run_time        |
 ./spec/models/event_spec.rb[1:2:1]      | passed | 0.00069 seconds |
 ./spec/models/user_spec.rb[1:1:1]       | passed | 0.51902 seconds |
 ./spec/models/user_spec.rb[1:2:1]       | passed | 0.00703 seconds |
-./spec/views/user_spec.rb[1:1:1]        | passed | 35.96 seconds   |
+./spec/views/user_spec.rb[1:1:1]        | passed | 48.66 seconds   |
