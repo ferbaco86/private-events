@@ -2,7 +2,10 @@ class InvitationsController < ApplicationController
   def new
   end
   def create
-    @invitation = Attendance.new(attendance_params)
-    redirect_to event_path(@event.id)
+    @attendance = Attendance.new(event_attendee_id: 1, attended_event_id: 10)
+
+    if @attendance.save
+      render :new
+    end
   end
 end

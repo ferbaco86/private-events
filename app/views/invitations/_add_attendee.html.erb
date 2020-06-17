@@ -1,4 +1,9 @@
 <%= form_with model: @invitation do |invitation_form| %>
-  <%= invitation_form.collection_select(:event_attendee_id, User.all, :id, :name) %>
-  <%= invitation_form.collection_select(:attended_event_id, Event.all, :id, :description) %>
+  <div class="field">
+    <div class="control">
+      <%= invitation_form.collection_select(:event_attendee_id, User.all, :id, :name) %><br>
+      <% invitation_form.text_field(params[:format]) %>
+    </div>
+  </div>
+  <%= invitation_form.submit('Add Guest', class: 'button is-primary')%>
 <% end %>

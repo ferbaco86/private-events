@@ -14,3 +14,13 @@
     <%= show_attendance_info(@attendees)%>
   </div>
 </div>
+<!--<%= form_with(url: invitations_path) do |form| %>
+  <div class = "field">
+    <div class = "control">
+      <%= form.label(:event_id, class: "label" ) %>
+      <%= form.text_field(:event_id) %>
+    </div>
+  </div>
+  <%= form.submit('Add Guest', class: "button is-primary") %>
+<% end %> -->
+<%= link_to 'Add Guest', invitations_new_path(params[:id]), class: "guest-link-style title is-5 has-text-white has-background-black" %>
