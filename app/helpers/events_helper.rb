@@ -1,6 +1,6 @@
 module EventsHelper
   def event_params
-    params.require(:event).permit(:event_date, :location, :description)
+    params.require(:event).permit(:event_date, :location, :description, :title)
   end
 
   def attendance_params
@@ -23,9 +23,12 @@ module EventsHelper
     event_location_text = 'Location: '
     event_description_text = 'Event Description: '
     event_creator_text = 'Creator Name: '
+    event_title_text = 'Event Title: '
+
 
     content_tag :ul do
       records.collect do |r|
+        concat(content_tag(:li, content_tag(:strong, event_title_text) + r[5]))
         concat(content_tag(:li, content_tag(:strong, event_date_text) + r[0]))
         concat(content_tag(:li, content_tag(:strong, event_location_text) + r[1]))
         concat(content_tag(:li, content_tag(:strong, event_description_text) + r[2]))
@@ -46,7 +49,8 @@ module EventsHelper
                        event.location,
                        event.description,
                        User.select(:id, :name).where(id: event.creator_id),
-                       event.id)
+                       event.id,
+                       event.title)
       @records.push(@event_info)
       @event_info = []
     end

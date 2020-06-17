@@ -10,7 +10,8 @@ class User < ApplicationRecord
                               .select(:id,
                                       :event_date,
                                       :location,
-                                      :description).where('event_date > ?', Time.now.to_formatted_s(:db))
+                                      :description,
+                                      :title).where('event_date > ?', Time.now.to_formatted_s(:db))
                           }
 
   scope :previous_events, lambda { |user_id|
@@ -19,6 +20,7 @@ class User < ApplicationRecord
                               .select(:id,
                                       :event_date,
                                       :location,
-                                      :description).where('event_date <= ?', Time.now.to_formatted_s(:db))
+                                      :description,
+                                      :title).where('event_date <= ?', Time.now.to_formatted_s(:db))
                           }
 end

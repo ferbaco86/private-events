@@ -1,6 +1,7 @@
 <%= simple_form_for(@event) do |f| %>
   <div class="field">
     <div class="control">
+      <%= f.input :title, label: 'Enter the title for the event', error: 'Event title cannot be blank', autofocus: true, label_html: {class: "label"}, wrapper: false %>
       <%= f.input :event_date, label: 'Enter the event date', error: 'Event date cannot be blank', autofocus: true, label_html: {class: "label"}, wrapper: false %>
       <%= f.input :location, label: 'Enter the location', error: 'Location cannot be blank', label_html: {class: "label"}, wrapper: false %>
       <%= f.input :description, label: 'Enter the description', error: 'Description cannot be blank', label_html: {class: "label"}, wrapper: false %>

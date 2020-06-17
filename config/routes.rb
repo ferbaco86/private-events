@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   get 'events/create'
   get 'events/show'
   get 'events/index'
+  get 'invitations/new'
+  get 'invitations/create'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: %i[new create show]
   resources :sessions
   resources :events
+  resources :invitations
   root "events#index"
 end

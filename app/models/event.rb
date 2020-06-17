@@ -8,7 +8,8 @@ class Event < ApplicationRecord
                           :event_date,
                           :location,
                           :description,
-                          :creator_id).where('event_date > ?', Time.now.to_formatted_s(:db))
+                          :creator_id,
+                          :title).where('event_date > ?', Time.now.to_formatted_s(:db))
                  }
 
   scope :past, lambda {
@@ -16,6 +17,7 @@ class Event < ApplicationRecord
                         :event_date,
                         :location,
                         :description,
-                        :creator_id).where('event_date <= ?', Time.now.to_formatted_s(:db))
+                        :creator_id,
+                        :title).where('event_date <= ?', Time.now.to_formatted_s(:db))
                }
 end

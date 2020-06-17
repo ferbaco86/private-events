@@ -1,4 +1,6 @@
-class InvitationController < ApplicationController
+class InvitationsController < ApplicationController
+  def new
+  end
   def create
     @invitation = Attendance.new(attendance_params)
     redirect_to event_path(@event.id)
