@@ -3,10 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # core
 ruby '>=2.6'
-gem 'rails', '>= 5.2'
+gem 'bulma-rails', '~> 0.8.2'
 gem 'devise'
 gem 'puma', '~> 3.11'
-gem 'bulma-rails', '~> 0.8.2'
+gem 'rails', '>= 5.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 # assets
