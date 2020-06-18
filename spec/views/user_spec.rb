@@ -1,4 +1,4 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe 'Webpage workflow', type: :system do
   describe 'Navigate the webpage' do
