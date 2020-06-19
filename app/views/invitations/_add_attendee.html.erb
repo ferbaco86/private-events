@@ -1,0 +1,9 @@
+<%= form_with(url: invitations_path) do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.collection_select(:event_attendee_id, User.all, :id, :name) %><br>
+      <%= f.hidden_field :attended_event_id, value: params[:format] %>
+    </div>
+  </div>
+  <%= f.submit('Add Guest', class: 'button is-primary')%>
+<% end %>

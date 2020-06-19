@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-content">
+    <h3 class="title is-5">
+      <%= @user.name %>
+      <%= session[:current_user_id] %>
+    </h3>
+  </div>
+</div>
+<div class = "card">
+  <div class = "card-content">
+  <strong>Created Events: </strong>
+    <%= show_event_info(@event) %>
+  </div>
+</div>
+<div class = "card">
+  <div class = "card-content">
+    <h2 class="title is-4 is-outlined"><strong>Upcoming Events: </strong></h2>
+    <%= show_event_info(@upcoming_events) %>
+    <h2 class="title is-4 is-outlined"><strong>Previous Events: </strong></h2>
+    <%= show_event_info(@previous_events) %>
+  </div>
+</div>
