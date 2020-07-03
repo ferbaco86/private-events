@@ -1,5 +1,5 @@
 # Members Only!: Rails Authentication 
-Rails app using associations betewen tables.
+Rails app using associations between tables.
 
 ![image](https://user-images.githubusercontent.com/33432289/84837540-034aa900-affe-11ea-88f0-c00e9cd082e6.png)
 
